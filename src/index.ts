@@ -1,3 +1,4 @@
 import { PORT, app } from "./app/web";
+import { logger } from "./utils/logger";
 
-app.listen(PORT, () => console.log("Server is listening on PORT " + PORT));
+app.listen(PORT, () => logger.info("Server is listening on PORT " + PORT));
