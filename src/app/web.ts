@@ -1,6 +1,7 @@
-import express, { Application, Request, Response } from "express";
+import express, { Application } from "express";
+import router from "../route";
 
 export const app: Application = express();
 export const PORT: number = 5000;
 
-app.use("/", (req: Request, res: Response) => {});
+router(app);
