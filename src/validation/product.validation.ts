@@ -2,7 +2,7 @@ import Joi from "joi";
 
 const createProductValidation = Joi.object({
   name: Joi.string().required().trim(),
-  price: Joi.number().required(),
+  price: Joi.string().required(),
   stock: Joi.number().required().allow(null),
 });
 
