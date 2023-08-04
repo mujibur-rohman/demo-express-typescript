@@ -7,19 +7,6 @@ import { prismaClient } from "../app/database";
 
 const register = async (request: any) => {
   const user = validate(registerUserValidation, request);
-  logger.info(user);
-  //   const countUser = await prismaClient.user.findFirst({
-  //     where: { username: user.name },
-  //     select: {
-  //       username: true,
-  //       name: true,
-  //     },
-  //   });
-  //   logger.info(countUser);
-
-  //   if (countUser === null) {
-  //     throw new ResponseError(400, "Username already exists");
-  //   }
 
   user.password = await bcrypt.hash(user.password, 10);
 
